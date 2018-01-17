@@ -9,7 +9,9 @@
 import UIKit
 
 class ViewController: UIViewController {
-
+    // MARK Properties
+    @IBOutlet weak var randomStaticText: UITextField!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -19,7 +21,21 @@ class ViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    
+    func randomer() -> UIColor{
+        let redColorato:CGFloat = CGFloat(drand48())
+        let greenColorato:CGFloat = CGFloat(drand48())
+        let blueColorato:CGFloat = CGFloat(drand48())
 
-
+        return UIColor(red: redColorato, green: greenColorato, blue:blueColorato, alpha: 1.0)
+    }
+    
+    //MARK: Actions
+    @IBAction func TheButtonButton(_ sender: UIButton) {
+        view.backgroundColor = randomer()
+    }
+ 
 }
+
 
